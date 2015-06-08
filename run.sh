@@ -12,6 +12,6 @@ bash -x /opt/start_impala.sh
 bash -x /opt/start_spark.sh
 
 export TERM=xterm
-
-bash
+echo "CDH STARTED"
+sleep infinity
 #tail -f /var/log/messages
