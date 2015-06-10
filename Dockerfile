@@ -154,4 +154,10 @@ ENV LANG en_US.UTF-8
 
 ADD run.sh /usr/bin/
 
+ADD ojdbc6.jar /opt/
+
+RUN echo "spark.executor.extraClassPath=/opt/ojdbc6.jar | tee -a /etc/spark/conf/spark-defaults.conf"
+RUN echo "spark.driver.extraClassPath=/opt/ojdbc6.jar | tee -a /etc/spark/conf/spark-defaults.conf"
+
+
 CMD ["run.sh"]
